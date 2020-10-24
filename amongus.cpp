@@ -3,13 +3,19 @@
 #include <random>
 #include <time.h>
 
+//#define ENABLE_BETA_SETTINGS
+
+
+
 using namespace std;
 
 struct gameMode 
 {
 	bool confirmEjects;
 	int emergencyMeetings;
+#ifdef ENABLE_BETA_SETTINGS
 	bool anonymousVoting;
+#endif
 	int emergencyCooldown;
 	int discussionTime;
 	int votingTime;
@@ -18,7 +24,9 @@ struct gameMode
 	int imposterVision;
 	int killCooldown;
 	int killDistance;
+#ifdef ENABLE_BETA_SETTINGS
 	int taskbarUpdates;
+#endif
 	bool visualTasks;
 	int commonTasks;
 	int longTasks;
@@ -63,7 +71,9 @@ int main()
 
 	gm.confirmEjects = rand() % 2;
 	gm.emergencyMeetings = rand() % 9;
+#ifdef ENABLE_BETA_SETTINGS
 	gm.anonymousVoting = rand() % 2;
+#endif
 	gm.emergencyCooldown = rand() % 13;
 	gm.discussionTime = rand() % 9;
 	gm.votingTime = rand() % 20;
@@ -72,7 +82,9 @@ int main()
 	gm.imposterVision = rand() % 20;
 	gm.killCooldown = rand() % 21;
 	gm.killDistance = rand() % 3;
+#ifdef ENABLE_BETA_SETTINGS
 	gm.taskbarUpdates = rand() % 3;
+#endif
 	gm.visualTasks = rand() % 2;
 	gm.commonTasks = rand() % 3;
 	gm.longTasks = rand() % 4;
@@ -82,7 +94,9 @@ int main()
 
 	cout << "confirm ejects: " << gm.confirmEjects << endl;
 	cout << "emergency meetings: " << emergencyMeetings[gm.emergencyMeetings] << endl;
+#ifdef ENABLE_BETA_SETTINGS
 	cout << "anonymous voting: " << gm.anonymousVoting << endl;
+#endif
 	cout << "emergency cooldown: " << emergencyCooldown[gm.emergencyCooldown] << endl;
 	cout << "discussion time: " << discussionTime[gm.discussionTime] << endl;
 	cout << "voting time: " << votingTime[gm.votingTime] << endl;
@@ -91,7 +105,9 @@ int main()
 	cout << "imposter vision: " << imposterVision[gm.imposterVision] << endl;
 	cout << "kill cooldown: " << killCooldown[gm.killCooldown] << endl;
 	cout << "kill distance: " << killDistance[gm.killDistance] << endl;
+#ifdef ENABLE_BETA_SETTINGS
 	cout << "taskbar updates: " << taskbarUpdates[gm.taskbarUpdates] << endl;
+#endif
 	cout << "visual tasks: " << gm.visualTasks << endl;
 	cout << "common tasks: " << commonTasks[gm.commonTasks] << endl;
 	cout << "long tasks: " << longTasks[gm.longTasks] << endl;
